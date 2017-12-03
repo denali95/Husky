@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "900722097820",
+    "firebase_url": "https://husky-6d2da.firebaseio.com",
+    "project_id": "husky-6d2da",
+    "storage_bucket": "husky-6d2da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900722097820:android:9c5936842950d437",
+        "android_client_info": {
+          "package_name": "com.example.denal.husky"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900722097820-luhj4b2dujqrhd7d9fvas5op4ab4l3tt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.denal.husky",
+            "certificate_hash": "fbf3174245d0c52d51928784aa5e128cc64f55b4"
+          }
+        },
+        {
+          "client_id": "900722097820-o0unjhi395gq31jomloqs2fmh89okd7f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVls0APRgTQMEu3leOEwZ_NObrG7RGyRM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900722097820-o0unjhi395gq31jomloqs2fmh89okd7f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
