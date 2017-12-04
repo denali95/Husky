@@ -72,6 +72,8 @@ public class HelpActivity extends Activity implements LocationListener, View.OnC
     int heart_rate;
     List<Address> addresses;
 
+    LocationRequest locationRequest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //  getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -162,6 +164,14 @@ public class HelpActivity extends Activity implements LocationListener, View.OnC
         //mSensorManager.unregisterListener(this);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("destroy", "destroyin");
+        locationRequest = null;
+        LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
+    }
+
     protected void createLocationRequest() {
         mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(500);
@@ -192,7 +202,7 @@ public class HelpActivity extends Activity implements LocationListener, View.OnC
     public void onConnected(@Nullable Bundle bundle) {
         Log.d("connect", "connected");
         // Create the LocationRequest object
-        LocationRequest locationRequest = LocationRequest.create();
+        locationRequest = LocationRequest.create();
         // Use high accuracy
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         // Set the update interval to 2 seconds
@@ -200,7 +210,7 @@ public class HelpActivity extends Activity implements LocationListener, View.OnC
         // Set the fastest update interval to 2 seconds
         locationRequest.setFastestInterval(TimeUnit.SECONDS.toMillis(2));
         // Set the minimum displacement
-        locationRequest.setSmallestDisplacement(2);
+        locationRequest.setSmallestDisplacement(0);
 
         // Register listener using the LocationRequest object
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
